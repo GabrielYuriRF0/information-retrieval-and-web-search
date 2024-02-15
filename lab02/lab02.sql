@@ -74,6 +74,12 @@ SELECT bf.title from best_films as bf WHERE description_ts @@ phraseto_tsquery('
 
 /*
 Questão 9
+
+title  | rank_value 
+---------+------------
+ CODA    | 0.09910413
+ Belfast |      1e-16
+
 */
 
 SELECT title, ts_rank(description_ts, to_tsquery('english', 'family & drama')) AS rank_value 
